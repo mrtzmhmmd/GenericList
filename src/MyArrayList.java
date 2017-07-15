@@ -1,19 +1,14 @@
 
-import javax.lang.model.element.Element;
-
 /**
  * 
  * 
  * @author Morteza return
  * @param <E>
->>>>>>> Stashed changes
  */
 
 public class MyArrayList<E> implements MyList<E> {
 	Object[] elementData;
 	private int size = 0;
-	private int count = 0;
-	private static final int DEFAULT_CAPACITY = 10;
 
 	@Override
 	public int size() {
