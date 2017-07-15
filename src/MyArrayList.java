@@ -1,27 +1,27 @@
 /**
  * 
  * 
- * @author Morteza
- * return 
+ * @author Morteza return
  */
 
 public class MyArrayList implements MyList<E> {
+	Object[] elementData;
+	private int size = 0;
 
 	@Override
 	public int size() {
 		// TODO Auto-generated method stub
-		
-		return 0;
+		return size;
 	}
 
 	@Override
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
-		return false;
+		return size == 0;
 	}
 
 	@Override
-	public boolean container(E e) {
+	public boolean contain(E e) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -41,7 +41,7 @@ public class MyArrayList implements MyList<E> {
 	@Override
 	public void clear() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
