@@ -1,10 +1,10 @@
-/**
+/*
  * 
  * 
- * @author Morteza return
+ * @author Morteza
  */
 
-public class MyArrayList implements MyList<E> {
+public class MyArrayList<E> implements MyList<E> {
 	Object[] elementData;
 	private int size = 0;
 
@@ -41,12 +41,17 @@ public class MyArrayList implements MyList<E> {
 	@Override
 	public void clear() {
 		// TODO Auto-generated method stub
+		for (int i = 0; i < elementData.length; i++)
+			elementData[i] = null;
 
 	}
 
 	@Override
 	public int indexOf(E e) {
 		// TODO Auto-generated method stub
+		for (int i = 0; i < size; i++)
+			if (elementData[i].equals(e))
+				return i;
 		return 0;
 	}
 }
