@@ -1,3 +1,5 @@
+import java.util.Comparator;
+
 public interface MyList<E> {
 	int size();
 	boolean isEmpty();
@@ -7,4 +9,9 @@ public interface MyList<E> {
 	void clear();
 	boolean equals(Object o);
 	int indexOf(E e);
+	void sort();
+	void fill(E e);
+	void sort(Comparator<E> c);
+	void fill(E e, int count);
+	void replace(E e);
 }
