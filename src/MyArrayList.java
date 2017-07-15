@@ -1,12 +1,19 @@
-/*
+
+import javax.lang.model.element.Element;
+
+/**
  * 
  * 
- * @author Morteza
+ * @author Morteza return
+ * @param <E>
+>>>>>>> Stashed changes
  */
 
 public class MyArrayList<E> implements MyList<E> {
 	Object[] elementData;
 	private int size = 0;
+	private int count = 0;
+	private static final int DEFAULT_CAPACITY = 10;
 
 	@Override
 	public int size() {
@@ -22,14 +29,15 @@ public class MyArrayList<E> implements MyList<E> {
 
 	@Override
 	public boolean contain(E e) {
+		return indexOf(e) >= 0;
 		// TODO Auto-generated method stub
-		return false;
 	}
 
 	@Override
 	public boolean add(E e) {
+		elementData[size++] = e;
+		return true;
 		// TODO Auto-generated method stub
-		return false;
 	}
 
 	@Override
@@ -53,5 +61,24 @@ public class MyArrayList<E> implements MyList<E> {
 			if (elementData[i].equals(e))
 				return i;
 		return 0;
+	}
+	
+	private void get(int i) {
+		
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		int i = 0;
+		if (o instanceof MyArrayList<?>) {
+			MyArrayList c = (MyArrayList) o;
+			while(i < size) {
+				if(this.contain(c.get))
+				if (o[i] == elementData[i])
+					i++;
+				else break;
+			}
+		}
+		
 	}
 }
