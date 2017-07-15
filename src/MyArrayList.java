@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.ConcurrentModificationException;
 
 /**
  * 
@@ -39,7 +41,7 @@ public class MyArrayList<E> implements MyList<E> {
 	@Override
 	public boolean remove(E e) {
 		// TODO Auto-generated method stub
-		if(this.contain(e))
+		if (this.contain(e))
 			return true;
 		return false;
 	}
@@ -65,14 +67,14 @@ public class MyArrayList<E> implements MyList<E> {
 	public boolean equals(Object o) {
 		int i = 0;
 		if (o instanceof MyArrayList<?>) {
-			MyArrayList c = (MyArrayList) o;
-			while(i < size) {
-				if(this.contain(c.get))
-				if (o[i] == elementData[i])
+			MyArrayList<Object> c = (MyArrayList<Object>) o;
+			while (i < size) {
+				if (c.contain(this.elementData[i]))
 					i++;
-				else break;
+				else
+					return false;
 			}
 		}
-		
+		return true;
 	}
 }
