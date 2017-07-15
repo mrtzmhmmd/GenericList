@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.ConcurrentModificationException;
-
 /**
  * 
  * 
@@ -10,19 +7,21 @@ import java.util.ConcurrentModificationException;
  */
 
 public class MyArrayList<E> implements MyList<E> {
-	Object[] elementData;
-	private int size = 0;
+
+	private int size = 10;
+	Object[] elementData = new Object[size];
+	private int count = 0;
 
 	@Override
 	public int size() {
 		// TODO Auto-generated method stub
-		return size;
+		return count;
 	}
 
 	@Override
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
-		return size == 0;
+		return count == 0;
 	}
 
 	@Override
@@ -33,31 +32,38 @@ public class MyArrayList<E> implements MyList<E> {
 
 	@Override
 	public boolean add(E e) {
-		elementData[size++] = e;
-		return true;
+		if (count <= size) {
+			elementData[count++] = e;
+			return true;
+		}
+		return false;
 		// TODO Auto-generated method stub
 	}
 
 	@Override
 	public boolean remove(E e) {
 		// TODO Auto-generated method stub
-		if (this.contain(e))
+		if (this.contain(e)) {
+			int index = this.indexOf(e);
+			for (int i = index; i < count; i++) {
+				elementData[i] = elementData[++i];
+			}
 			return true;
+		}
 		return false;
 	}
 
 	@Override
 	public void clear() {
 		// TODO Auto-generated method stub
-		for (int i = 0; i < elementData.length; i++)
+		for (int i = 0; i < count; i++)
 			elementData[i] = null;
-
 	}
 
 	@Override
 	public int indexOf(E e) {
 		// TODO Auto-generated method stub
-		for (int i = 0; i < size; i++)
+		for (int i = 0; i < count; i++)
 			if (elementData[i].equals(e))
 				return i;
 		return 0;
