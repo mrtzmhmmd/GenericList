@@ -4,6 +4,7 @@
  * 
  * @author Morteza return
  * @param <E>
+ *            >>>>>>> Stashed changes
  */
 
 public class MyArrayList<E> implements MyList<E> {
@@ -38,6 +39,8 @@ public class MyArrayList<E> implements MyList<E> {
 	@Override
 	public boolean remove(E e) {
 		// TODO Auto-generated method stub
+		if(this.contain(e))
+			return true;
 		return false;
 	}
 
@@ -56,10 +59,6 @@ public class MyArrayList<E> implements MyList<E> {
 			if (elementData[i].equals(e))
 				return i;
 		return 0;
-	}
-	
-	private void get(int i) {
-		
 	}
 
 	@Override
